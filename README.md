@@ -6,6 +6,26 @@ Download the toolchain.
 $ wget https://raw.githubusercontent.com/leetal/ios-cmake/master/ios.toolchain.cmake
 ```
 
+Configure for iOS simulator on a x86_64 machine:
+
+```shell
+$ mkdir build && cd build
+$ cmake .. -G Xcode -DCMAKE_TOOLCHAIN_FILE=../ios.toolchain.cmake -DPLATFORM=SIMULATOR64 -DCMAKE_INSTALL_PREFIX=$PWD/../dist
+```
+
+For M1, use `SIMULATORARM64` instead. Build the project:
+
+```shell
+cmake --build . --config Release
+```
+
+Install it:
+
+```shell
+cmake --install . --config Release
+```
+
+
 ## Include settings ##
 
 Since we are including a C++ library we need to add the include paths to the headers we are going to use. This is done in the consuming library via `XCode`. Typically by clicking the project -> Build Settings -> Header Search Paths. You should add the path to the Tolc generated header for both Debug and Release.
