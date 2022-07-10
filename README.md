@@ -1,6 +1,6 @@
 # CitOLCCore
 
-Download the toolchain.
+Download the toolchain from [https://github.com/leetal/ios-cmake](https://github.com/leetal/ios-cmake).
 
 ```shell
 $ wget https://raw.githubusercontent.com/leetal/ios-cmake/master/ios.toolchain.cmake
